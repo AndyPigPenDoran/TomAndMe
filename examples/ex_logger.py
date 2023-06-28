@@ -6,6 +6,7 @@ https://docs.python.org/3/library/logging.html
 This library allows logging to various outputs - ie to file and to screen (stdout)/ The script
 uses argparse - se the ex_argparse.py script for information on that
 
+new comment for show
 """
 # Start with the imports required
 import sys
