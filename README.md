@@ -1,2 +1,2 @@
-# TomAndMe
-Sharing stuff as a test
+# TomWork
+Play area for Thomas. Examples in the /examples folder
