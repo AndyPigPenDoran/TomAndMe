@@ -322,6 +322,9 @@ def valid_args():
                 CONNECT_INFO["transport"] = PYWINRM_TRANSPORT_BASIC if args.new else PYWINRM_TRANSPORT_PLAINTEXT
                 CONNECT_INFO["msg_encrypt"] = MSG_ENCRYPT_NEVER
 
+            if args.transport is not None:
+                CONNECT_INFO["transport"] = args.transport
+
             if args.pwd is not None:
                 CONNECT_INFO["cred_pwd"] = args.pwd
             
@@ -2196,6 +2199,9 @@ class cred_info():
                 else:
                     self.connect_info["ps_ad_host"] = ""
                     self.connect_info["transport"] = PYWINRM_TRANSPORT_BASIC if args.new else PYWINRM_TRANSPORT_PLAINTEXT
+
+                    if args.transport is not None:
+                        self.connect_info["transport"] = args.transport
 
                 self.connect_info["ps_account_type"] = _type
                 self.connect_info["cred_user"] = _user
