@@ -1127,7 +1127,7 @@ class pypsrp_transport():
             "read_timeout": 30,
         }
 
-        display_password = self.connect_info["cred_pwd "] #"**********"
+        display_password = "**********"
 
         if self.connect_info["ps_account_type"] == 1:
             _user = "%s@%s" % (self.connect_info["cred_user"], self.connect_info["ps_ad_domain"])
@@ -1447,7 +1447,7 @@ class pywinrm_transport():
         endpoint_page = "wsman" if args.ep is None else args.ep 
 
         endpoint = "%s://%s:%s/%s" % (protocol, connect_server, self.connect_info["cred_port"], endpoint_page)
-        display_password = self.connect_info["cred_pwd"] #"**********"
+        display_password = "**********"
 
         if self.connect_info["ps_account_type"] == 1:
             display_user = "%s@%s (kerberos ticket being used)" % (
@@ -2262,7 +2262,7 @@ def main():
         return
 
     for x in CONNECT_INFO:
-        if x == "cred_pwdDummy":
+        if x == "cred_pwd":
             value = "**********"
         else:
             value = CONNECT_INFO[x]
